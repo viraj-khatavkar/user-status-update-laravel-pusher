@@ -95,18 +95,6 @@
                     .listen('UserOffline', (e) => {
                         this.friend = e.user;
                     });
-            },
-            whisper() {
-                Echo.join('chat')
-                    .whisper('typing', {
-                        name: this.user.name
-                    });
-            },
-            listenForWhisper() {
-                Echo.join('chat')
-                    .listenForWhisper('typing', (e) => {
-                        this.friend.status = e.name + " is typing";
-                    });
             }
         }
     }
